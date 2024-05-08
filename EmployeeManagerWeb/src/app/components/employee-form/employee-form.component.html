@@ -1,0 +1,40 @@
+<div class="form-container">
+    <h2>{{formActionLabel}} Employee</h2>
+    <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+      <div>
+        <mat-form-field class="w-full">
+          <mat-label>Name</mat-label>
+          <input matInput type="text" placeholder="Name" formControlName="name"/>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="w-full">
+          <mat-label>Email</mat-label>
+          <input matInput type="text" placeholder="Email" formControlName="email"/>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="w-full">
+          <mat-label>Age</mat-label>
+          <input matInput type="number" placeholder="Age" formControlName="age"/>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="w-full">
+          <mat-label>Phone</mat-label>
+          <input matInput type="text" placeholder="Phone" formControlName="phone"/>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field class="w-full">
+          <mat-label>Salary</mat-label>
+          <input matInput type="number" placeholder="Sal" formControlName="salary"/>
+        </mat-form-field>
+      </div>
+      
+      <div class="actions">
+          <button mat-raised-button color="accent" [disabled]="!employeeForm.valid">Submit</button>
+          <button mat-raised-button [routerLink]="cancelRouterLink">Cancel</button>
+      </div>
+    </form>
+</div>
